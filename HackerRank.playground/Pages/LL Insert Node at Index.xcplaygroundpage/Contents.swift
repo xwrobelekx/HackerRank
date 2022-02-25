@@ -71,21 +71,21 @@ extension SinglyLinkedListNode : CustomStringConvertible {
 
 func insertNodeAtPosition(llist: SinglyLinkedListNode?, data: Int, position: Int) -> SinglyLinkedListNode? {
     let head = llist
-    var currentNodeIndex = 1
-    
-    var currentNode = head
-    if currentNode != nil {
-    while currentNodeIndex < position {
-        currentNodeIndex += 1
-        currentNode = currentNode?.next
-    }
-    
-    let nextNode = currentNode?.next
-    let newNode = SinglyLinkedListNode(data: data)
-    newNode.next = nextNode
-    currentNode?.next = newNode
-    }
-    return head
+        var currentNodeIndex = 1
+        
+        var currentNode = head
+        if currentNode != nil {
+        while currentNodeIndex < position {
+            currentNodeIndex += 1
+            currentNode = currentNode?.next
+        }
+        
+        let nextNode = currentNode?.next
+        let newNode = SinglyLinkedListNode(data: data)
+        newNode.next = nextNode
+        currentNode?.next = newNode
+        }
+        return head
 }
 
 
@@ -101,27 +101,25 @@ node0.next = node1
 node1.next = node2
 
 
-insertNodeAtPosition(llist: list, data: 1, position: 2)
 
 print(list.description)
 
 
-//input
-/*
-6
-1
-2
-3
-4
-5
-6
-7
-5
- 
- //output: 1 2 3 4 5 7 6
- 
- 
- 
-*/
+
+import XCTest
+
+class SinglyLinkedListTests : XCTestCase {
+    
+    #warning("this test needs to ne converted ot realy on arrey of ints vs string description")
+    func testSample() {
+        XCTAssertEqual(insertNodeAtPosition(llist: list, data: 1, position: 2)?.description, "3 -> 16 -> 1 -> 13 -> 7", "Failed on sample Test ")
+    }
+    
+    
+    
+    
+}
+
+SinglyLinkedListTests.defaultTestSuite.run()
 
 //: [Next](@next)
