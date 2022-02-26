@@ -7,17 +7,11 @@ import UIKit
  */
 
 func rotLeft(a: [Int], d: Int) -> [Int] {
-    var rotatedArr = a
-    
-    for _ in 0..<d {
-        var first = rotatedArr.remove(at: 0)
-        rotatedArr.append(first)
-    }
-    
-    return rotatedArr
-
+    let firstPart = a[0..<d]
+    var secondPart = a[d..<a.count]
+    let rotated : [Int] = Array(secondPart) + Array(firstPart)
+    return rotated
 }
-
 
 
 
