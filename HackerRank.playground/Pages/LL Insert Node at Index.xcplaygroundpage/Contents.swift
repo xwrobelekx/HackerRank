@@ -114,10 +114,6 @@ class SinglyLinkedListTests : XCTestCase {
     func testSample() {
         XCTAssertEqual(insertNodeAtPosition(llist: list, data: 1, position: 2)?.description, "3 -> 16 -> 1 -> 13 -> 7", "Failed on sample Test ")
     }
-    
-    
-    
-    
 }
 
 SinglyLinkedListTests.defaultTestSuite.run()
